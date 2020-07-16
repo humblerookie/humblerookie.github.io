@@ -26,20 +26,28 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-6f54f8052f7a78fdbe5b.js"
+    "url": "webpack-runtime-ef2c18ea9f42d4c33d75.js"
   },
   {
     "url": "commons-b29f3278bf61be5373c6.js"
   },
   {
-    "url": "app-0aeee9f261430a13587f.js"
+    "url": "app-73d2db2ef7fb87d97e99.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-ebda79b2f242b4f85f83.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "602e2d760409fede8c2a74c6a22e9ef9"
+    "revision": "09e6e9bdfd79223c3f835aef14e1c344"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "d274adf0f008ef152ce70a312b04b730"
+  },
+  {
+    "url": "manifest.webmanifest",
+    "revision": "36da692b20cb917be32e990bc28bb76c"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -58,12 +66,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/humblerookie.github.io`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-0aeee9f261430a13587f.js`))) {
+  if (!resources || !(await caches.match(`/humblerookie.github.io/app-73d2db2ef7fb87d97e99.js`))) {
     return await fetch(event.request)
   }
 
@@ -76,7 +84,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/humblerookie.github.io/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
