@@ -1,4 +1,423 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anvith Bhat | My Blog]]></title><description><![CDATA[I'm passionate about creating stuff around android. Be vary, observations are interlaced with humor.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 17 Jul 2020 06:42:14 GMT</lastBuildDate><item><title><![CDATA[Avoid racing with Rx Subjects & TestScheduler]]></title><description><![CDATA[We all use Rxjava in android and write tests, this article highlights a particular race condition which you may encounter.]]></description><link>https://lumen.netlify.com/posts/avoid-racing-subjects-and-testscheduler/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/avoid-racing-subjects-and-testscheduler/</guid><pubDate>Fri, 30 Nov 2018 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1650/0*tNRIRcp5pq8aHSrx&quot; alt=&quot;Banner graphic RXjava and Android&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anvith Bhat | My Blog]]></title><description><![CDATA[I'm passionate about creating stuff around android. Be vary, observations are interlaced with humor.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Jul 2020 17:23:12 GMT</lastBuildDate><item><title><![CDATA[Exploring Recent Kotlin APIs]]></title><description><![CDATA[We take a look at some of the more prominent api changes in Kotlin 1.3.7x and 1.4.x preview releases.]]></description><link>https://lumen.netlify.com/posts/exploring-recent-kotlin-apis/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/exploring-recent-kotlin-apis/</guid><pubDate>Sat, 18 Jul 2020 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://i.postimg.cc/WzZ36DDw/art.png&quot; alt=&quot;Banner graphic Kotlin&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The recent releases of Kotlin have brought through a rich set of apis in a particular the upcoming &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt; releases. Let’s take a dive into some of the more prominent changes including modifications to the std lib.&lt;/p&gt;
+&lt;h2&gt;Fun Interfaces: SAM Conversions&lt;/h2&gt;
+&lt;p&gt;Starting &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt;, Kotlin allows us to use a more idiomatic lambda syntax for SAM classes built in Kotlin. So your typical interfaces can be prefixed with &lt;code class=&quot;language-text&quot;&gt;fun&lt;/code&gt;, which allows for a neat little lambda instantiation as shown below.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist104403861&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-parser-kt&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parser-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parser-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt;fun keyword is allowed on interfaces&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parser-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parser-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Parser&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parser-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parser-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-en&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;parse&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;String&lt;/span&gt;)&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parser-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parser-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parser-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parser-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parser-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parser-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;String&lt;/span&gt;, &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;String&lt;/span&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/325712f8a2434f1a812b939a2d85b62f/raw/c1be34a62f3f8c3df19fef44f3e7291f366584f9/Parser.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/325712f8a2434f1a812b939a2d85b62f#file-parser-kt&quot;&gt;Parser.kt&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;As you can see instead of the earlier boilerplate (shown below), we have neat little lambda for our anonymous &lt;code class=&quot;language-text&quot;&gt;Parser&lt;/code&gt; instance.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist104404442&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-parserinstance-kt&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;oldInstantiation&lt;/span&gt;() {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; defaultParser &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Parser&lt;/span&gt;{&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=&quot;pl-k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;parse&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;String&lt;/span&gt;)&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;         require(value.length &lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;4&lt;/span&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;         &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt;(value.substring(&lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;3&lt;/span&gt;), value.substring(&lt;span class=&quot;pl-c1&quot;&gt;3&lt;/span&gt;, value.length))&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   } &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;newInstantiation&lt;/span&gt;() {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; defaultParser &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Parser&lt;/span&gt; { value &lt;span class=&quot;pl-k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        require(value.length &lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;4&lt;/span&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt;(value.substring(&lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;3&lt;/span&gt;), value.substring(&lt;span class=&quot;pl-c1&quot;&gt;3&lt;/span&gt;, value.length))&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-parserinstance-kt-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-parserinstance-kt-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/2ce3221d5138a109035dce144ad970fc/raw/e5103e045644cd4a3fe75296016d3065ad5626e3/ParserInstance.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/2ce3221d5138a109035dce144ad970fc#file-parserinstance-kt&quot;&gt;ParserInstance.kt&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Elegant Deprecations: Delegate to another property&lt;/h2&gt;
+&lt;p&gt;Kotlin &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt; allows us to delegate a property initialization to another property. This allows us to rename or refactor fields without breaking the api for existing consumers.&lt;/p&gt;
+&lt;p&gt;A simple example would be where a field is renamed&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist104422510&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-vehicle-kt&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   &lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; id&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   &lt;span class=&quot;pl-k&quot;&gt;@Deprecated&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Use &amp;#39;id&amp;#39; instead&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;ReplaceWith&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;id&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;))&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   &lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; vehicleId&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt; by &lt;span class=&quot;pl-c1&quot;&gt;this&lt;/span&gt;::id&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/1e265dc580b4eebcccb39b019537d83e/raw/31fd40f97f01c26697fc46a2ed24b309a8dcdbf4/Vehicle.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/1e265dc580b4eebcccb39b019537d83e#file-vehicle-kt&quot;&gt;Vehicle.kt&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Notice how we’ve renamed this field without breaking the contract with the classes that have been using this field.&lt;/p&gt;
+&lt;p&gt;Consider a more useful/real world variant. Lets say we had a class &lt;code class=&quot;language-text&quot;&gt;Vehicle&lt;/code&gt; with only two types a car and a cycle. We initially decided to model this with a single &lt;strong&gt;boolean&lt;/strong&gt; called &lt;code class=&quot;language-text&quot;&gt;isCar&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist104422477&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-vehicle-kt&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;isCar&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/3551fe106f6d758b54c60980c4e3ebc2/raw/66933471a4a0de4123c622b033a414d4a701d5bd/Vehicle.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/3551fe106f6d758b54c60980c4e3ebc2#file-vehicle-kt&quot;&gt;Vehicle.kt&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;However later you realise you need to build more variants of these vehicles and need to remodel your data type. You can do this gracefully by coupling the new feature of delegating to another property along with a small extension function.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist104422456&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-vehicle-kt&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;) {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Deprecated&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Use &amp;#39;type&amp;#39;, instead&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;ReplaceWith&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;type&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;))&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; isCar&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt; by &lt;span class=&quot;pl-c1&quot;&gt;this&lt;/span&gt;::type&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Deprecated&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Use constructor with &amp;#39;type&amp;#39; info instead&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-en&quot;&gt;constructor&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;isCar&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt;) &lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;this&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (isCar) &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;TRUCK&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;SHIP&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;KProperty&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;*&lt;/span&gt;&amp;gt;.&lt;span class=&quot;pl-en&quot;&gt;getValue&lt;/span&gt;(&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-smi&quot;&gt;vehicle&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-smi&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;KProperty&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    )&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; vehicle.type &lt;span class=&quot;pl-k&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L18&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L19&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L20&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L21&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L22&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;main&lt;/span&gt;() {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L23&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; vehicle &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;(&lt;span class=&quot;pl-en&quot;&gt;Vehicle.VehicleType&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;TRUCK&lt;/span&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L24&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L25&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt;Below line would throw a deprecated warning&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L26&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-c1&quot;&gt;println&lt;/span&gt;(vehicle.isCar)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-vehicle-kt-L27&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-vehicle-kt-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/b0f36d6dd086ec9692b4a2dcd249be31/raw/a2b8b6d0cb7ee726fbd88c8df4fd8eebf9d18f69/Vehicle.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/b0f36d6dd086ec9692b4a2dcd249be31#file-vehicle-kt&quot;&gt;Vehicle.kt&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Standard library additions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;scan&lt;/code&gt; : This operator was added to the collections framework. Its essentially the equivalent of using &lt;code class=&quot;language-text&quot;&gt;fold&lt;/code&gt; with a &lt;code class=&quot;language-text&quot;&gt;map&lt;/code&gt; operation. &lt;code class=&quot;language-text&quot;&gt;scan&lt;/code&gt; returns a transformed version of the current collection where the transforming lambda has access to the &lt;em&gt;accumulated&lt;/em&gt; value in order to compute the new value. Here’s an illustration from the official documentation.
+&lt;img src=&quot;https://blog.jetbrains.com/wp-content/uploads/2020/02/kotlin-scanFold.gif&quot; alt=&quot;Scan diagram&quot;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Builders&lt;/strong&gt;: &lt;code class=&quot;language-text&quot;&gt;buildList&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;buildMap&lt;/code&gt; are efficient ways to build read only lists and maps respectively for cases where the members aren’t straightforward or need to be computed from multiple sources. Here’s how you’d use it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;div id=&quot;gist104423034&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-builders-kt&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-builders-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-builders-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt; &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; allowedDisplayCodes &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; buildList&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-builders-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-builders-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        addAll(currentDisplayCodes)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-builders-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-builders-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        add(selectedCode)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-builders-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-builders-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        addAll(discounts.map { it.itemCode })&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-builders-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-builders-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/9d23ed7de78739e7d37da7304e236cd9/raw/68ad55e7f988209c8e9029754f04bc2e532cd14d/Builders.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/humblerookie/9d23ed7de78739e7d37da7304e236cd9#file-builders-kt&quot;&gt;Builders.kt&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;There are a few more additions, you can check the entire list &lt;a href=&quot;https://github.com/JetBrains/kotlin/blob/1.3.70/ChangeLog.md#new-features-5&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Parting thoughts&lt;/h2&gt;
+&lt;p&gt;Both &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;1.3.7x&lt;/code&gt; releases have introduced some neat changes which we can make use of especially in the standard library. Do give them a go.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Avoid racing with Rx Subjects & TestScheduler]]></title><description><![CDATA[We all use Rxjava in android and write tests, this article highlights a particular race condition which you may encounter.]]></description><link>https://lumen.netlify.com/posts/avoid-racing-subjects-and-testscheduler/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/avoid-racing-subjects-and-testscheduler/</guid><pubDate>Fri, 30 Nov 2018 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1650/0*tNRIRcp5pq8aHSrx&quot; alt=&quot;Banner graphic RXjava and Android&quot;&gt;&lt;/p&gt;
 &lt;p&gt;RX is a great spell but at times certain things can make you wish you had more hair on your head if you miss out on some fundamentals. Here’s one of my ‘GOTCHA’ moments.&lt;/p&gt;
 &lt;p&gt;After spending about a day or so trying to figure out why a simple test kept failing, a man was frustrated.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist93321026&quot; class=&quot;gist&quot;&gt;
