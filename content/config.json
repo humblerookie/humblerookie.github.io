@@ -1,0 +1,48 @@
+{
+  "title": "Anvith Bhat | My Blog",
+  "url": "https://anvith.dev",
+  "subtitle": "Welcome to my blog",
+  "copyright": "© All rights reserved.",
+  "googleAnalyticsId": "UA-73379983-2",
+  "disqusShortname": "anvith",
+  "postsLimit": 4,
+  "pathPrefix": "",
+  "menu": [
+    {
+      "label": "Articles",
+      "path": "/"
+    },
+    {
+      "label": "About",
+      "path": "/pages/about"
+    },
+    {
+      "label": "Projects",
+      "path": "/pages/projects"
+    }
+  ],
+  "author": {
+    "name": "Anvith Bhat",
+    "photo": "images/mugshot.png",
+    "bio": "I'm passionate about creating stuff around android. Be vary, observations may be interlaced with humor.",
+    "contacts": {
+      "rss": "",
+      "email": "",
+      "github": "humblerookie",
+      "facebook": "#",
+      "telegram": "#",
+      "twitter": "anv1th",
+      "linkedin": "anv1th",
+      "instagram": "#",
+      "mastodon": "#",
+      "line": "",
+      "weibo": "",
+      "gitlab": "",
+      "medium": "",
+      "youtube": "",
+      "codepen": "",
+      "soundcloud": "",
+      "bluesky": ""
+    }
+  }
+}

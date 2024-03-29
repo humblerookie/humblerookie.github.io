@@ -1,0 +1,209 @@
+@import "../variables";
+@import "../mixins";
+
+html {
+  font-size: $typographic-root-font-size;
+}
+
+body {
+  background: var(--color-page-background);
+  color: var(--color-typographic-base-font);
+  font-family: $typographic-font-family;
+  font-size: $typographic-base-font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: $typographic-base-line-height;
+  margin: 0 0 0 calc(100vw - 100%);
+  text-rendering: optimizelegibility;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+h2,
+h1,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $typographic-font-family;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: $typographic-base-font-size * 2.5;
+  @include line-height(2);
+  @include margin-top(4);
+  @include margin-bottom(1);
+}
+
+h2 {
+  font-size: $typographic-base-font-size * 1.6875;
+  @include line-height(1.5);
+  @include margin-top(2);
+  @include margin-bottom(0.5);
+}
+
+h3 {
+  font-size: $typographic-base-font-size * 1.375;
+  @include line-height(1);
+  @include margin-top(2);
+  @include margin-bottom(0.5);
+}
+
+h4 {
+  font-size: $typographic-base-font-size * 1.2;
+  @include line-height(1);
+  @include margin-top(1.5);
+  @include margin-bottom(0.5);
+}
+
+h5 {
+  font-size: $typographic-base-font-size;
+  @include line-height(1);
+  @include margin-top(2.5);
+  @include margin-bottom(0.5);
+}
+
+h6 {
+  font-size: $typographic-base-font-size;
+  @include line-height(1);
+  @include margin-top(2.5);
+  @include margin-bottom(0.5);
+}
+
+img {
+  border: 0;
+  display: block;
+  max-width: 100%;
+}
+
+hr {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 1px,
+    transparent 11px,
+    $color-dark 11px,
+    $color-dark 15px,
+    transparent 15px,
+    transparent 26px
+  );
+  background-size: 100% 26px;
+  border: 0;
+  color: var(--color-typographic-base-font);
+  display: block;
+  height: 26px;
+  margin: 52px auto;
+  width: 100px;
+}
+
+a {
+  color: var(--color-typographic-link-p-font);
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--color-typographic-link-s-font);
+  }
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+ul {
+  list-style: square;
+  @include margin-bottom(1);
+
+  & li {
+    margin-bottom: 10px;
+    padding: 0 5px;
+  }
+}
+
+p {
+  @include line-height(1);
+  @include margin-bottom(1);
+}
+
+blockquote {
+  font-style: italic;
+  padding: 0;
+  text-align: center;
+}
+
+figure {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+figcaption {
+  @include line-height(0.75);
+  @include margin-top(0.25);
+  color: var(--color-typographic-base-font);
+  font-size: $typographic-small-font-size;
+  font-style: italic;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.card{
+  border-radius: 4px;
+  background: var(--color-page-border);
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+padding: 14px 80px 18px 36px;
+cursor: pointer;
+margin: 20px; 
+min-height: 60px;
+ p {
+  color: var(--color-typographic-base-font);
+ }
+}
+
+.card:hover{
+   transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card h3{
+font-weight: 600;
+}
+
+blockquote {
+  background: var(--color-page-border);
+  opacity: 0.5;
+  border-left: 5px solid var(--color-typographic-link-s-font);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  text-align: left;
+
+}
+blockquote p {
+  display: inline;
+  font-size: 0.8em !important;
+}
+
+.language-shell{
+  font-size: 0.8em !important;
+}
+.language-bash{
+  font-size: 0.8em !important;
+}
+@include breakpoint-sm {
+  figure.float-left,
+  figure.float-right {
+    max-width: 310px;
+    @include padding(0, 1, 0, 1);
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .float-left {
+    float: left;
+  }
+}
