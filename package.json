@@ -15,7 +15,7 @@
   "license": "MIT",
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
   "scripts": {
-    "deploy": "gatsby build",
+    "deploy": "gatsby build && echo 'anvith.dev' > public/CNAME && gh-pages -d public",
     "build": "npm run clean && gatsby build",
     "clean": "rimraf .cache public",
     "format": "npm run format:ts && npm run format:scss",
