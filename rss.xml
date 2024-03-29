@@ -1,827 +1,368 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anvith Bhat | My Blog]]></title><description><![CDATA[I'm passionate about creating stuff around android. Be vary, observations may be interlaced with humor.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Jul 2020 15:06:36 GMT</lastBuildDate><item><title><![CDATA[Exploring Recent Kotlin APIs]]></title><description><![CDATA[We take a look at some of the more prominent api changes in Kotlin 1.3.7x and 1.4.x preview releases.]]></description><link>https://lumen.netlify.com/posts/exploring-recent-kotlin-apis/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/exploring-recent-kotlin-apis/</guid><pubDate>Sat, 18 Jul 2020 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://i.postimg.cc/WzZ36DDw/art.png&quot; alt=&quot;Banner graphic Kotlin&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anvith Bhat | My Blog]]></title><description><![CDATA[Anvith Bhat | My Blog]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 29 Mar 2024 16:31:02 GMT</lastBuildDate><item><title><![CDATA[Optimizing Performance of your Flutter tests]]></title><description><![CDATA[We look how to speedup our tests in flutter and leveraging some options to improve readability on our CI.]]></description><link>https://anvith.dev/posts/optimizing-flutter-tests/</link><guid isPermaLink="false">https://anvith.dev/posts/optimizing-flutter-tests/</guid><pubDate>Fri, 29 Mar 2024 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/95109034eb2f8f42791af07a2b8539be/54af7/banner.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 40.833333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3ZAD/8QAGRAAAQUAAAAAAAAAAAAAAAAAEgACAxEh/9oACAEBAAEFAtTiqMh//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxABAQEBAAAAAAAAAAAAAAAAADEhIv/aAAgBAQAGPwJld1//xAAYEAEBAQEBAAAAAAAAAAAAAAABEQAxQf/aAAgBAQABPyHtknmYc1c0SK+3f//aAAwDAQACAAMAAAAQcB//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EDkut//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/EGf/xAAcEAEAAgIDAQAAAAAAAAAAAAABABExkSFRYYH/2gAIAQEAAT8QXjvYwTpznQdWwU6sAF618n//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/static/95109034eb2f8f42791af07a2b8539be/8ac56/banner.webp 240w,
+/static/95109034eb2f8f42791af07a2b8539be/d3be9/banner.webp 480w,
+/static/95109034eb2f8f42791af07a2b8539be/e46b2/banner.webp 960w,
+/static/95109034eb2f8f42791af07a2b8539be/f992d/banner.webp 1440w,
+/static/95109034eb2f8f42791af07a2b8539be/882b9/banner.webp 1920w,
+/static/95109034eb2f8f42791af07a2b8539be/c76db/banner.webp 2016w&quot;
+              sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/static/95109034eb2f8f42791af07a2b8539be/09b79/banner.jpg 240w,
+/static/95109034eb2f8f42791af07a2b8539be/7cc5e/banner.jpg 480w,
+/static/95109034eb2f8f42791af07a2b8539be/6a068/banner.jpg 960w,
+/static/95109034eb2f8f42791af07a2b8539be/644c5/banner.jpg 1440w,
+/static/95109034eb2f8f42791af07a2b8539be/0f98f/banner.jpg 1920w,
+/static/95109034eb2f8f42791af07a2b8539be/54af7/banner.jpg 2016w&quot;
+            sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/static/95109034eb2f8f42791af07a2b8539be/6a068/banner.jpg&quot;
+            alt=&quot;Banner graphic Kotlin&quot;
+            title=&quot;Banner graphic Kotlin&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Recently, while looking around avenues for optimisation on our CI pipeline, I was exploring the tests library and ran into an interesting parameter.&lt;/p&gt;
+&lt;h4 id=&quot;concurrency&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#concurrency&quot; aria-label=&quot;concurrency permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Concurrency&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--concurrency&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;default&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Test suites by default run on half of the number of CPU cores. We can leverage this parameter to control the number of test suites that run in parallel.&lt;/p&gt;
+&lt;p&gt;First let’s try and see how the tests perform on a project with  430 tests.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;/usr/bin/time &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ⓘ Note: We’ve used the full qualifier &lt;strong&gt;“/usr/bin/time”&lt;/strong&gt; instead of &lt;strong&gt;“time”&lt;/strong&gt; since it allows us to pass the more arguments.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;🎉 &lt;span class=&quot;token number&quot;&gt;430&lt;/span&gt; tests passed.
+       &lt;span class=&quot;token number&quot;&gt;29.03&lt;/span&gt; real        &lt;span class=&quot;token number&quot;&gt;41.32&lt;/span&gt; user         &lt;span class=&quot;token number&quot;&gt;9.33&lt;/span&gt; sys
+          &lt;span class=&quot;token number&quot;&gt;1551482880&lt;/span&gt;  maximum resident &lt;span class=&quot;token builtin class-name&quot;&gt;set&lt;/span&gt; size
+           &lt;span class=&quot;token number&quot;&gt;226740352&lt;/span&gt;  peak memory footprint
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now let’s try with the max cores on our machine allows i.e. &lt;strong&gt;10&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;/usr/bin/time &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--reporter&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;github &lt;span class=&quot;token parameter variable&quot;&gt;--concurrency&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;🎉 &lt;span class=&quot;token number&quot;&gt;430&lt;/span&gt; tests passed.
+       &lt;span class=&quot;token number&quot;&gt;22.23&lt;/span&gt; real        &lt;span class=&quot;token number&quot;&gt;42.51&lt;/span&gt; user        &lt;span class=&quot;token number&quot;&gt;10.56&lt;/span&gt; sys
+          &lt;span class=&quot;token number&quot;&gt;1904492544&lt;/span&gt;  maximum resident &lt;span class=&quot;token builtin class-name&quot;&gt;set&lt;/span&gt; size
+           &lt;span class=&quot;token number&quot;&gt;240502720&lt;/span&gt;  peak memory footprint
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As you can see it takes 30% less time when we max out concurrency. However, this comes at a cost i.e. the memory footprint also increases slightly, although I’ve found the increase to be reasonable.&lt;/p&gt;
+&lt;h3 id=&quot;continuous-integration&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#continuous-integration&quot; aria-label=&quot;continuous integration permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Continuous Integration&lt;/h3&gt;
+&lt;p&gt;If you plan on running your tests on a CI you can leverage the following script to automatically retrieve the number of cores on the worker instance and pipe it into the flutter test command as follows&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;## ci_checks.sh&lt;/span&gt;
+&lt;span class=&quot;token assign-left variable&quot;&gt;os_type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;uname&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;  
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$os_type&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Linux&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;  
+  &lt;span class=&quot;token assign-left variable&quot;&gt;number_of_cores&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;nproc&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;  
+&lt;span class=&quot;token keyword&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$os_type&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Darwin&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;  
+  &lt;span class=&quot;token assign-left variable&quot;&gt;number_of_cores&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sysctl&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; hw.physicalcpu&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;  
+&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;  
+  &lt;span class=&quot;token assign-left variable&quot;&gt;number_of_cores&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; %NUMBER_OF_PROCESSORS%&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;  
+&lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
+
+flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--concurrency&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$number_of_cores&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;sharding&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sharding&quot; aria-label=&quot;sharding permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sharding&lt;/h2&gt;
+&lt;p&gt;If your CI doesn’t cap the number of parallel jobs you can run or alternately if speed is your primary concern, you could benefit from test sharding (splitting your tests into multiple independent chunks).&lt;/p&gt;
+&lt;p&gt;Sharding consists of supplying two parameters&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Total Shards&lt;/strong&gt; : This indicates the number of subsets you wish to break the tests into.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shard Index&lt;/strong&gt;: This indicates the index of the subset of tests you’re running.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So typically if you wish to split your test suite into two chunks and run it on two machines you could do this.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#Machine 1&lt;/span&gt;
+flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; --total-shards &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; --shard-index &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#Machine 2&lt;/span&gt;
+flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; --total-shards &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; --shard-index &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;readability&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#readability&quot; aria-label=&quot;readability permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Readability&lt;/h3&gt;
+&lt;p&gt;Dart/Flutter tests use the reporter parameter to “prettify” the outputs, I’ve found the “github” reporter to be neat and concise as opposed to the default reporter.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#Default Reporter &lt;/span&gt;
+
+00:08 +198: /Users/anvith/Development/Flutter/pokemon-flutter/test/blocs/pokemon_overview_bloc_test.dart: verify the initial state when user has caught a pokemon                                         
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;🌎 Easy Localization&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;WARNING&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Localization key &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;stories&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; not found
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;🌎 Easy Localization&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;WARNING&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Localization key &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;stories&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; not found
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;🌎 Easy Localization&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;WARNING&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Localization key &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;stories&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; not found
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;🌎 Easy Localization&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;WARNING&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Localization key &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;stories&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; not found
+00:09 +252: /Users/anvith/Development/Flutter/pokemon-flutter/test/blocs/pokemon_overview_bloc_test.dart: verify when user switches tab to view details after catching a pokemon we navigate to it                                                                                        
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;🌎 Easy Localization&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;WARNING&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Localization key &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;stories&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you run the tests with the github reporter i.e. &lt;code class=&quot;language-text&quot;&gt;flutter test --reporter=github &lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;### Github Reporter&lt;/span&gt;
+
+✅ /Users/anvith/Development/Flutter/pokemon-flutter/test/blocs/pokemon_overview_bloc_test.dart: verify the initial state when user has caught a pokemon
+✅ /Users/anvith/Development/Flutter/pokemon-flutter/test/blocs/pokemon_overview_bloc_test.dart: verify when user switches tab to view details after catching a pokemon we navigate to it&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Exploring Recent Kotlin APIs]]></title><description><![CDATA[We take a look at some of the more prominent api changes in Kotlin 1.3.7x and 1.4.x preview releases.]]></description><link>https://anvith.dev/posts/exploring-recent-kotlin-apis/</link><guid isPermaLink="false">https://anvith.dev/posts/exploring-recent-kotlin-apis/</guid><pubDate>Sat, 18 Jul 2020 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a424ab9fbd5cc997e2af036b34e7c940/21b4d/banner.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.833333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAACiElEQVR42n2S20tUURTG58/xPR8KuhFBONZLOSO+5KSRBhGZCelDID4YQRCBL4XKKGrKaKmkSNFF0pibQpqXcTSd6zlnjzPO1bPnnL2/1kwWRNKBj70356zf/tZ3lsXu8B7WOvzFapubj03s8CLP6Brb54yUSCR4MqHxJFN5gqk6Y4xrmsYVReWhUJRraoQPDK0Zl2s9wu7wkbyGxVbvE7Z6P6pqPBh7/QMERC6bhTQK0DkHKwD7Oilvgi4AQaEoCsLhKJR4CH0Dq6i2+1BiEMssAU07Haw1Hjk6sSMh8/L9p2X55OVHOTrkksbsXZkdb5YHc10ywZjUNCbj8bgkoFSVPdnnXJEElH8BjxzKEdc2gALauidx4kwT+hvOw9V4FoV2C5L+cSTTGST3VXKqIh6L0RqFc3gd1Tbv8cBXriABDTx/1o/BhpN4cH8KPR1PkVmbA8sDW8EIVtfC+La6h5Xvu9R+BM6hY4D2I2ApQ4Dj64tONDeN4vHtdsw7u+kKQFNVtHUu4lbrPBpbPqP10RcwLYLBkQ1Yjwe6CbhLpXks9Xah50YdblqrUHH6HqZmFyAFx+6ehs0tBRuBGALBGLIZDcNjgX+Btt8/ZTyIHNcR6q3HnYuVqDj3EJUXWnDK2oGZdx4UChmk0ykCHSCVStFEpMuTUar926HDL6uuueXkTEySRbG9uSM+LKwL79Km8C0HaA2I9UBYFItFoeu6ODzURS5XEBSPmJgOC4pLUJcE9RmWmuulzRIuXfVQa3H87xFClGWaJjgvJSvw5m20PMP2Xw5hqWtw5+saPfqV2kV9aiaaLuVfLBrMMExmmCYzyxKMQExK+UdFek/fsunZOKP8GXXJCKj+BEROszqB9Rc5AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/static/a424ab9fbd5cc997e2af036b34e7c940/8ac56/banner.webp 240w,
+/static/a424ab9fbd5cc997e2af036b34e7c940/d3be9/banner.webp 480w,
+/static/a424ab9fbd5cc997e2af036b34e7c940/e46b2/banner.webp 960w,
+/static/a424ab9fbd5cc997e2af036b34e7c940/af3f0/banner.webp 1280w&quot;
+              sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/static/a424ab9fbd5cc997e2af036b34e7c940/8ff5a/banner.png 240w,
+/static/a424ab9fbd5cc997e2af036b34e7c940/e85cb/banner.png 480w,
+/static/a424ab9fbd5cc997e2af036b34e7c940/d9199/banner.png 960w,
+/static/a424ab9fbd5cc997e2af036b34e7c940/21b4d/banner.png 1280w&quot;
+            sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/static/a424ab9fbd5cc997e2af036b34e7c940/d9199/banner.png&quot;
+            alt=&quot;Banner graphic Kotlin&quot;
+            title=&quot;Banner graphic Kotlin&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;The recent releases of Kotlin have brought about a rich set of APIs particularly the upcoming &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt; release. Let’s take a dive into some of the more prominent changes.&lt;/p&gt;
-&lt;h2&gt;Fun Interfaces: SAM Conversions&lt;/h2&gt;
+&lt;h2 id=&quot;fun-interfaces-sam-conversions&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#fun-interfaces-sam-conversions&quot; aria-label=&quot;fun interfaces sam conversions permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Fun Interfaces: SAM Conversions&lt;/h2&gt;
 &lt;p&gt;Starting &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt;, Kotlin allows us to use a more idiomatic lambda syntax for SAM classes written in Kotlin. So your typical interfaces can be prefixed with &lt;code class=&quot;language-text&quot;&gt;fun&lt;/code&gt; which allows for a neat little lambda instantiation as shown below.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist104403861&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-parser-kt&quot; class=&quot;file&quot;&gt;
-    
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;//fun keyword is allowed on interfaces&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; Parser &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ParsedOutput
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parser-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parser-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt;fun keyword is allowed on interfaces&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parser-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parser-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Parser&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parser-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parser-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-en&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;parse&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;String&lt;/span&gt;)&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parser-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parser-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parser-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parser-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parser-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parser-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;String&lt;/span&gt;, &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;String&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
-
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/325712f8a2434f1a812b939a2d85b62f/raw/c1be34a62f3f8c3df19fef44f3e7291f366584f9/Parser.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/325712f8a2434f1a812b939a2d85b62f#file-parser-kt&quot;&gt;Parser.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ParsedOutput&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; header&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; body&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Below is a comparison of the old and new instantiation.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist104404442&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-parserinstance-kt&quot; class=&quot;file&quot;&gt;
-    
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;oldInstantiation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; defaultParser &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Parser&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ParsedOutput &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;token function&quot;&gt;ParsedOutput&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;oldInstantiation&lt;/span&gt;() {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; defaultParser &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Parser&lt;/span&gt;{&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=&quot;pl-k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;parse&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;String&lt;/span&gt;)&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;         require(value.length &lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;4&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;         &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt;(value.substring(&lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;3&lt;/span&gt;), value.substring(&lt;span class=&quot;pl-c1&quot;&gt;3&lt;/span&gt;, value.length))&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   } &lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;newInstantiation&lt;/span&gt;() {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; defaultParser &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Parser&lt;/span&gt; { value &lt;span class=&quot;pl-k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        require(value.length &lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;4&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-en&quot;&gt;ParsedOutput&lt;/span&gt;(value.substring(&lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;3&lt;/span&gt;), value.substring(&lt;span class=&quot;pl-c1&quot;&gt;3&lt;/span&gt;, value.length))&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-parserinstance-kt-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-parserinstance-kt-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
-
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/2ce3221d5138a109035dce144ad970fc/raw/e5103e045644cd4a3fe75296016d3065ad5626e3/ParserInstance.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/2ce3221d5138a109035dce144ad970fc#file-parserinstance-kt&quot;&gt;ParserInstance.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;newInstantiation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; defaultParser &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Parser &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;ParsedOutput&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;So instead of using the &lt;code class=&quot;language-text&quot;&gt;oldInstantation&lt;/code&gt; which has a lot of boilerplate, we now have neat little lambda for our anonymous &lt;code class=&quot;language-text&quot;&gt;Parser&lt;/code&gt; instance as shown in &lt;code class=&quot;language-text&quot;&gt;newInstantiation&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Delegate to another property&lt;/h2&gt;
+&lt;p&gt;##Delegate to another property&lt;/p&gt;
 &lt;p&gt;Kotlin &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt; allows us to delegate a property initialization to another property. This allows us to rename or refactor fields without breaking the API for existing consumers.&lt;/p&gt;
 &lt;p&gt;A simple example would be where a field is renamed&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist104422510&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-vehicle-kt&quot; class=&quot;file&quot;&gt;
-    
-
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   &lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; id&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   &lt;span class=&quot;pl-k&quot;&gt;@Deprecated&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Use &amp;#39;id&amp;#39; instead&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;ReplaceWith&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;id&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;))&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;   &lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; vehicleId&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt; by &lt;span class=&quot;pl-c1&quot;&gt;this&lt;/span&gt;::id&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
-
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/1e265dc580b4eebcccb39b019537d83e/raw/31fd40f97f01c26697fc46a2ed24b309a8dcdbf4/Vehicle.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/1e265dc580b4eebcccb39b019537d83e#file-vehicle-kt&quot;&gt;Vehicle.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; Vehicle &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; id&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Int &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+   &lt;span class=&quot;token annotation builtin&quot;&gt;@Deprecated&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Use &apos;id&apos; instead&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ReplaceWith&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; vehicleId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Int &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;id
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Notice how we’ve renamed this field without breaking the contract with the classes that have been using this field.&lt;/p&gt;
 &lt;p&gt;There is an interesting side effect of this API, let’s say we had a class &lt;code class=&quot;language-text&quot;&gt;Vehicle&lt;/code&gt; with only two types a &lt;code class=&quot;language-text&quot;&gt;car&lt;/code&gt; and a &lt;code class=&quot;language-text&quot;&gt;cycle&lt;/code&gt;. We initially decided to model this with a single &lt;strong&gt;boolean&lt;/strong&gt; called &lt;code class=&quot;language-text&quot;&gt;isCar&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist104422477&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-vehicle-kt&quot; class=&quot;file&quot;&gt;
-    
-
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;isCar&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
-
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/3551fe106f6d758b54c60980c4e3ebc2/raw/66933471a4a0de4123c622b033a414d4a701d5bd/Vehicle.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/3551fe106f6d758b54c60980c4e3ebc2#file-vehicle-kt&quot;&gt;Vehicle.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Vehicle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; isCar&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;Boolean&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;However we realise later that we need to build more variants of these vehicles and need to remodel the data type. We can couple the new feature of delegating to another property along with a small extension function to achieve it.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist104422456&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-vehicle-kt&quot; class=&quot;file&quot;&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Vehicle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; VehicleType &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; CYCLE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;token annotation builtin&quot;&gt;@Deprecated&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Use &apos;type&apos;, instead&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ReplaceWith&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; isCar&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Boolean &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;type
+
+    &lt;span class=&quot;token annotation builtin&quot;&gt;@Deprecated&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Use constructor with &apos;type&apos; info instead&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;constructor&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;isCar&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Boolean&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;isCar&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; CAR &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; CYCLE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
     
+    &lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; VehicleType &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        CYCLE&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; CAR&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; TRUCK&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; SHIP
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;) {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Deprecated&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Use &amp;#39;type&amp;#39;, instead&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;ReplaceWith&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;type&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;))&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; isCar&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt; by &lt;span class=&quot;pl-c1&quot;&gt;this&lt;/span&gt;::type&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Deprecated&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Use constructor with &amp;#39;type&amp;#39; info instead&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-en&quot;&gt;constructor&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;isCar&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt;) &lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;this&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (isCar) &lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;TRUCK&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;SHIP&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;KProperty&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;*&lt;/span&gt;&amp;gt;.&lt;span class=&quot;pl-en&quot;&gt;getValue&lt;/span&gt;(&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-smi&quot;&gt;vehicle&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;,&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-smi&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;KProperty&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    )&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; vehicle.type &lt;span class=&quot;pl-k&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L18&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L19&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L20&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L21&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L22&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;main&lt;/span&gt;() {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L23&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; vehicle &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;(&lt;span class=&quot;pl-en&quot;&gt;TRUCK&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L24&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L25&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt;Below line would throw a deprecated warning&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L26&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-c1&quot;&gt;println&lt;/span&gt;(vehicle.isCar)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L27&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; KProperty&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getValue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        vehicle&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Vehicle&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        property&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; KProperty&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Boolean &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; vehicle&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;type &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; CAR
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
 
-  &lt;/div&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; vehicle &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Vehicle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;TRUCK&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-  &lt;/div&gt;
-&lt;/div&gt;
+    &lt;span class=&quot;token comment&quot;&gt;//Below line would throw a deprecated warning&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vehicle&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;isCar&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The extension function is merely a way to overload the &lt;a href=&quot;https://kotlinlang.org/docs/reference/operator-overloading.html#property-delegation-operators&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;getter for the delegate&lt;/a&gt;. One thing to note is while this syntax may seem more appealing you’d be better served using the &lt;code class=&quot;language-text&quot;&gt;get/set&lt;/code&gt; methods. This is because the extension method can get murkier when more properties start using it. So I recommend using the code below for complicated deprecations instead.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Vehicle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; VehicleType &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; CYCLE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/b0f36d6dd086ec9692b4a2dcd249be31/raw/62607eac0734de60d42396aed0f8bf322f261b37/Vehicle.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/b0f36d6dd086ec9692b4a2dcd249be31#file-vehicle-kt&quot;&gt;Vehicle.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;The extension function is merely a way to overload the &lt;a href=&quot;https://kotlinlang.org/docs/reference/operator-overloading.html#property-delegation-operators&quot;&gt;getter for the delegate&lt;/a&gt;. One thing to note is while this syntax may seem more appealing you’d be better served using the &lt;code class=&quot;language-text&quot;&gt;get/set&lt;/code&gt; methods. This is because the extension method can get murkier when more properties start using it. So I recommend using the code below for complicated deprecations instead.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist104432465&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-vehicle-kt&quot; class=&quot;file&quot;&gt;
-    
+    &lt;span class=&quot;token annotation builtin&quot;&gt;@Deprecated&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Use constructor with &apos;type&apos; info instead&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;constructor&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;isCar&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Boolean&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;isCar&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; CAR &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; CYCLE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;Vehicle&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;) {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Deprecated&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Use constructor with &amp;#39;type&amp;#39; info instead&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-en&quot;&gt;constructor&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;isCar&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt;) &lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;this&lt;/span&gt;(&lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (isCar) &lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Deprecated&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Use &amp;#39;type&amp;#39;, instead&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;ReplaceWith&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;type&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;))&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; isCar&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;Boolean&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;false&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        get() &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; type &lt;span class=&quot;pl-k&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        set(value) {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            field &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; value&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            type &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (value) &lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;VehicleType&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-en&quot;&gt;CYCLE&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;CAR&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;TRUCK&lt;/span&gt;, &lt;span class=&quot;pl-en&quot;&gt;SHIP&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-vehicle-kt-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-vehicle-kt-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
+    &lt;span class=&quot;token annotation builtin&quot;&gt;@Deprecated&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Use &apos;type&apos;, instead&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ReplaceWith&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; isCar&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Boolean &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; type &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; CAR
+        &lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            field &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; value
+            type &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; CAR &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; CYCLE
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/8b63a87020c51e96cc57fd62be818fa3/raw/e109d14d54f8a4563712a885193cad67d2ed3930/Vehicle.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/8b63a87020c51e96cc57fd62be818fa3#file-vehicle-kt&quot;&gt;Vehicle.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;h2&gt;Standard library additions&lt;/h2&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; VehicleType &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        CYCLE&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; CAR&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; TRUCK&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; SHIP
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;standard-library-additions&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#standard-library-additions&quot; aria-label=&quot;standard library additions permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Standard library additions&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;scan&lt;/code&gt; : This operator was added to the collections framework. Its essentially the equivalent of using &lt;code class=&quot;language-text&quot;&gt;fold&lt;/code&gt; with a &lt;code class=&quot;language-text&quot;&gt;map&lt;/code&gt; operation. &lt;code class=&quot;language-text&quot;&gt;scan&lt;/code&gt; returns a transformed version of the current collection where the transforming lambda has access to the &lt;em&gt;accumulated&lt;/em&gt; value in order to compute the new value. Here’s an illustration from the official documentation.
-&lt;img src=&quot;https://blog.jetbrains.com/wp-content/uploads/2020/02/kotlin-scanFold.gif&quot; alt=&quot;Scan diagram&quot;&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Builders&lt;/strong&gt;: &lt;code class=&quot;language-text&quot;&gt;buildList&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;buildMap&lt;/code&gt; are efficient ways to build read only lists and maps respectively for cases where the members aren’t straightforward or need to be computed from multiple sources. Here’s how you’d use it &lt;div id=&quot;gist104423034&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-builders-kt&quot; class=&quot;file&quot;&gt;
-    
-
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-builders-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-builders-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt; &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; allowedDisplayCodes &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; buildList&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-builders-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-builders-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        addAll(currentDisplayCodes)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-builders-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-builders-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        add(selectedCode)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-builders-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-builders-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        addAll(discounts.map { it.itemCode })&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-builders-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-builders-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
-
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/9d23ed7de78739e7d37da7304e236cd9/raw/68ad55e7f988209c8e9029754f04bc2e532cd14d/Builders.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/9d23ed7de78739e7d37da7304e236cd9#file-builders-kt&quot;&gt;Builders.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;scan&lt;/code&gt; : This operator was added to the collections framework. Its essentially the equivalent of using &lt;code class=&quot;language-text&quot;&gt;fold&lt;/code&gt; with a &lt;code class=&quot;language-text&quot;&gt;map&lt;/code&gt; operation. &lt;code class=&quot;language-text&quot;&gt;scan&lt;/code&gt; returns a transformed version of the current collection where the transforming lambda has access to the &lt;em&gt;accumulated&lt;/em&gt; value in order to compute the new value. Here’s an illustration from the official documentation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;There are a few more additions, you can check the entire list &lt;a href=&quot;https://github.com/JetBrains/kotlin/blob/1.3.70/ChangeLog.md#new-features-5&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Parting thoughts&lt;/h2&gt;
-&lt;p&gt;Both &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;1.3.7x&lt;/code&gt; releases have introduced some neat changes which we can make use of especially in the standard library. Do give them a go.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Avoid racing with Rx Subjects & TestScheduler]]></title><description><![CDATA[We all use Rxjava in android and write tests, this article highlights a particular race condition which you may encounter.]]></description><link>https://lumen.netlify.com/posts/avoid-racing-subjects-and-testscheduler/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/avoid-racing-subjects-and-testscheduler/</guid><pubDate>Fri, 30 Nov 2018 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1650/0*tNRIRcp5pq8aHSrx&quot; alt=&quot;Banner graphic RXjava and Android&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.jetbrains.com/wp-content/uploads/2020/02/kotlin-scanFold.gif&quot; alt=&quot;Scan diagram&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Builders&lt;/strong&gt;: &lt;code class=&quot;language-text&quot;&gt;buildList&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;buildMap&lt;/code&gt; are efficient ways to build read only lists and maps respectively for cases where the members aren’t straightforward or need to be computed from multiple sources. Here’s how you’d use it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt; &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; allowedDisplayCodes &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; buildList&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Int&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;addAll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;currentDisplayCodes&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;selectedCode&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;addAll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;discounts&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; it&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;itemCode &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There are a few more additions, you can check the entire list &lt;a href=&quot;https://github.com/JetBrains/kotlin/blob/1.3.70/ChangeLog.md#new-features-5&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;here&lt;/a&gt;.
+##Parting thoughts
+Both &lt;code class=&quot;language-text&quot;&gt;1.4&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;1.3.7x&lt;/code&gt; releases have introduced some neat changes which we can make use of especially in the standard library. Do give them a go.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Avoid racing with Rx Subjects & TestScheduler]]></title><description><![CDATA[We all use Rxjava in android and write tests, this article highlights a particular race condition which you may encounter.]]></description><link>https://anvith.dev/posts/avoid-racing-subjects-and-testscheduler/</link><guid isPermaLink="false">https://anvith.dev/posts/avoid-racing-subjects-and-testscheduler/</guid><pubDate>Fri, 30 Nov 2018 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 825px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/838b59ec669f5c90f162d62e3b4052c1/d4c13/banner.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB4klEQVR42n2Rz0sbQRTHx4uH3nrxx8Fbb/0TbMGLgvSoRWiFQnsoUq8W8ZQcEtFqUVoUI7WpB2OqIEbxYOIaDBqNP9rY2CW/NL+JbjJJ2GSz2d2ZcXYqKJb2wQzfee/zvvDmARwpaimR0MAEI3rIfwJTgkGSWqBPEGi0eJtmzjpXivM8K+O7LEVvJHMV1Utn0vTV/2KVN+arccCBsX1gCjwYFcCo0L+tMRAxh5NsyeBN5UWJasRcPMLEanSIv3L9TK9H4SGYapj+YfbBt1uwwfK72RLeTVNIY92OcO7x7FkWiqxZz3DJT7YDg1xV9AzCIDb7S6dFBQmSmC47Ph4TSd2IwzfOxDMr3zyw12HY6xjk/CGICLRGej57elL5oIwLJfkKlL2ZWhBW3ClyUTqeC3xoXaRe2xe5d2t8+9jBw1eb3Uau1+gKxgSa3zwf343YNSIVUSxXi4LKsI9UVFpQi/Ly0+/O9x6qFUWffWYjBJ7YMpcFNoieiVZdC4mX7vDcDr90GvcApW683PKlbPb5W+1L9ZPxrYRupLHvOc28NnGwdPthFZT7Fn4+ddTl8I+YuTZA7CGtbbnwyJroWofu5J8N/WvJ9D7Kzx9mbVQshvrAXwS+o4mG7luoWFZxjWIyEq8BxFb85hyPWmIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/static/838b59ec669f5c90f162d62e3b4052c1/8ac56/banner.webp 240w,
+/static/838b59ec669f5c90f162d62e3b4052c1/d3be9/banner.webp 480w,
+/static/838b59ec669f5c90f162d62e3b4052c1/0244e/banner.webp 825w&quot;
+              sizes=&quot;(max-width: 825px) 100vw, 825px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/static/838b59ec669f5c90f162d62e3b4052c1/8ff5a/banner.png 240w,
+/static/838b59ec669f5c90f162d62e3b4052c1/e85cb/banner.png 480w,
+/static/838b59ec669f5c90f162d62e3b4052c1/d4c13/banner.png 825w&quot;
+            sizes=&quot;(max-width: 825px) 100vw, 825px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/static/838b59ec669f5c90f162d62e3b4052c1/d4c13/banner.png&quot;
+            alt=&quot;Banner graphic RXjava and Android&quot;
+            title=&quot;Banner graphic RXjava and Android&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;RX is a great spell but at times certain things can make you wish you had more hair on your head if you miss out on some fundamentals. Here’s one of my ‘GOTCHA’ moments.&lt;/p&gt;
 &lt;p&gt;After spending about a day or so trying to figure out why a simple test kept failing, a man was frustrated.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist93321026&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-hairpullingtest-kt&quot; class=&quot;file&quot;&gt;
-    
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@RunWith&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;MockitoJUnitRunner&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; HairPullingTest &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;@RunWith&lt;/span&gt;(&lt;span class=&quot;pl-en&quot;&gt;MockitoJUnitRunner&lt;/span&gt;::&lt;span class=&quot;pl-c1&quot;&gt;class&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;HairPullingTest&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;private&lt;/span&gt;  &lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; testScheduler &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;TestScheduler&lt;/span&gt;()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Test&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;testVodoo&lt;/span&gt;() {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; subject&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;pl-en&quot;&gt;PublishSubject&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;PublishSubject&lt;/span&gt;.create()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; testObserver &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; subject&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .subscribeOn(testScheduler)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .observeOn(testScheduler)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .test()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        subject.onNext(&lt;span class=&quot;pl-c1&quot;&gt;1&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        testScheduler.triggerActions()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        testObserver.assertValueCount(&lt;span class=&quot;pl-c1&quot;&gt;1&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtest-kt-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
-
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/de2044feef32a0eb113c4cf7cf5e383d/raw/94959e94f09b50bcdea6834b045d4c9ee37f6290/HairPullingTest.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/de2044feef32a0eb113c4cf7cf5e383d#file-hairpullingtest-kt&quot;&gt;HairPullingTest.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt;  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; testScheduler &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;TestScheduler&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token annotation builtin&quot;&gt;@Test&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;testVodoo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; subject&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;PublishSubject&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Int&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; PublishSubject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; testObserver &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; subject
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;subscribeOn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;testScheduler&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;observeOn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;testScheduler&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        subject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;onNext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        testScheduler&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;triggerActions&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        testObserver&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;assertValueCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Fast forward he also realised something weird&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Substituting Subject with an Observable passes the test.&lt;/li&gt;
 &lt;li&gt;Replacing the TestScheduler with a Trampoline scheduler also passes the test.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So something unusual is up, so he heads over to &lt;a href=&quot;https://stackoverflow.com/questions/53519339/issue-with-publishsubject-and-testscheduler-item-isnt-emitted&quot;&gt;StackOverflow&lt;/a&gt;
+&lt;p&gt;So something unusual is up, so he heads over to &lt;a href=&quot;https://stackoverflow.com/questions/53519339/issue-with-publishsubject-and-testscheduler-item-isnt-emitted&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;StackOverflow&lt;/a&gt;
 and with some help from Dávid Karnok adds an assert statement.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/4228/1*tGnTJBwTIjgLpTp2uPCClg.png&quot; alt=&quot;Banner graphic test 1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/CDJo4EgHwbaPS/source.gif&quot; alt=&quot;WTF&quot;&gt;&lt;/p&gt;
 &lt;p&gt;So a man goes about adding logs to his test.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist93321148&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-hairpullingtestlogged-kt&quot; class=&quot;file&quot;&gt;
-    
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@RunWith&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;MockitoJUnitRunner&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; HairPullingTest &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;@RunWith&lt;/span&gt;(&lt;span class=&quot;pl-en&quot;&gt;MockitoJUnitRunner&lt;/span&gt;::&lt;span class=&quot;pl-c1&quot;&gt;class&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;HairPullingTest&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;private&lt;/span&gt;  &lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; testScheduler &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;TestScheduler&lt;/span&gt;()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Test&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;testVodoo&lt;/span&gt;() {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; subject&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;pl-en&quot;&gt;PublishSubject&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;PublishSubject&lt;/span&gt;.create()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; testObserver &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; subject&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .subscribeOn(testScheduler)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .observeOn(testScheduler)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .doOnSubscribe {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;                &lt;span class=&quot;pl-c1&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;I&amp;#39;ve subscribed&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            }.test()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-c1&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Emitting Item&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        subject.onNext(&lt;span class=&quot;pl-c1&quot;&gt;1&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        testScheduler.triggerActions()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        testObserver.assertValueCount(&lt;span class=&quot;pl-c1&quot;&gt;1&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L18&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-L19&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestlogged-kt-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
-
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/9ff1f62c0d08078d5538b0775a82ddba/raw/95d4456dc22186572535cc791d4d612261f77b90/HairPullingTestLogged.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/9ff1f62c0d08078d5538b0775a82ddba#file-hairpullingtestlogged-kt&quot;&gt;HairPullingTestLogged.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt;  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; testScheduler &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;TestScheduler&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token annotation builtin&quot;&gt;@Test&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;testVodoo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; subject&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;PublishSubject&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Int&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; PublishSubject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; testObserver &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; subject
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;subscribeOn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;testScheduler&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;observeOn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;testScheduler&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;doOnSubscribe&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;I&apos;ve subscribed&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal singleline&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Emitting Item&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        subject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;onNext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        testScheduler&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;triggerActions&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        testObserver&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;assertValueCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;and…&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/4784/1*lY_TJBqq7LDISWyrkCQUCQ.png&quot; alt=&quot;Questionable output&quot;&gt;&lt;/p&gt;
 &lt;p&gt;So what’s really happening here?&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1000/1*ZcpcCH-0QNJJOKCw0fz_sg.gif&quot; alt=&quot;Everybody lies&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Turns out the actual subscription(&lt;em&gt;subscribeActual()&lt;/em&gt; method in &lt;em&gt;PublishSubject&lt;/em&gt;) which adds the subscriber to Subject’s list of subscribers doesn’t happen until &lt;em&gt;triggerActions&lt;/em&gt; is invoked on the &lt;strong&gt;TestScheduler&lt;/strong&gt;. This results in a race condition where even though the subscriber seems subscribed, the actual subscription and emission happen concurrently. The emission is therefore ignored due to absence of any subscribers.&lt;/p&gt;
 &lt;p&gt;The solution is to invoke &lt;em&gt;triggerActions&lt;/em&gt; immediately after subscribing and then again after emission.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist93321226&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-hairpullingtestsolution-kt&quot; class=&quot;file&quot;&gt;
-    
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@RunWith&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;MockitoJUnitRunner&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; DemoViewModelTest &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-kotlin &quot;&gt;
-      
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;@RunWith&lt;/span&gt;(&lt;span class=&quot;pl-en&quot;&gt;MockitoJUnitRunner&lt;/span&gt;::&lt;span class=&quot;pl-c1&quot;&gt;class&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;DemoViewModelTest&lt;/span&gt; {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;var&lt;/span&gt; testScheduler &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;TestScheduler&lt;/span&gt;()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;@Test&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;testVodoo&lt;/span&gt;() {&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; subject&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;PublishSubject&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;PublishSubject&lt;/span&gt;.create()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;val&lt;/span&gt; testObserver &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; subject&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .subscribeOn(testScheduler)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .observeOn(testScheduler)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            .test()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        testScheduler.triggerActions()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        subject.onNext(&lt;span class=&quot;pl-c1&quot;&gt;1&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        testScheduler.triggerActions()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        testObserver.assertValueCount(&lt;span class=&quot;pl-c1&quot;&gt;1&lt;/span&gt;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-hairpullingtestsolution-kt-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;/table&gt;
-
-
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/cbe4d2acd488d2c074fe708b0be50ff5/raw/cc6ac26117a3c31b2f9f8a28f06e8c6053cb5f02/HairPullingTestSolution.kt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/humblerookie/cbe4d2acd488d2c074fe708b0be50ff5#file-hairpullingtestsolution-kt&quot;&gt;HairPullingTestSolution.kt&lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1&gt;Conclusion&lt;/h1&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; testScheduler &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;TestScheduler&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token annotation builtin&quot;&gt;@Test&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;testVodoo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; subject&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; PublishSubject&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Int&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; PublishSubject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; testObserver &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; subject
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;subscribeOn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;testScheduler&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;observeOn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;testScheduler&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        testScheduler&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;triggerActions&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        subject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;onNext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        testScheduler&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;triggerActions&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        testObserver&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;assertValueCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;#Conclusion&lt;/p&gt;
 &lt;p&gt;Always add an extra &lt;em&gt;triggerAction()&lt;/em&gt; with your &lt;strong&gt;TestScheduler&lt;/strong&gt; right after subscribing your subjects to ensure the subsequent emission happen as intended.&lt;/p&gt;</content:encoded></item></channel></rss>
