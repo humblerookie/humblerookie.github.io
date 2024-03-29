@@ -42,8 +42,7 @@ In order to check the difference let's see how the default test execution fares 
            226740352  peak memory footprint
 ```
 
-> ⓘ Note: We've used the full qualifier **"/usr/bin/time"** instead of **"time"** since it allows us to pass the more
-> arguments.
+> ⓘ Note: We've used the full qualifier **"/usr/bin/time"** instead of **"time"** since it allows us to pass more arguments.
 
 
 Next, let's try with leveraging the maximum cores that our machine allows i.e. **10**.
@@ -83,14 +82,14 @@ fi
 flutter test --concurrency=$number_of_cores
 ```
 
-There is yet another trick to speed up tests i.e. sharding. Let's see how we can leverage it.
+There is yet another trick to speed up tests i.e. sharding. Let's see how we can leverage it the next section.
 
 ## Sharding
 
 If your CI doesn't cap the number of parallel jobs you can run or alternately if speed is your primary concern, you
-could benefit from test sharding (splitting your tests into multiple independent chunks).
+could benefit from test sharding (splitting your tests into multiple  chunks that can be run independently on different machines).
 
-Sharding consists of supplying two parameters
+Sharding consists of supplying two parameters:
 
 1. **Total Shards** : This indicates the number of subsets you wish to break the tests into.
 2. **Shard Index**: This indicates the index of the subset of tests you're running.
@@ -105,10 +104,12 @@ flutter test --total-shards 2 --shard-index 0
 flutter test --total-shards 2 --shard-index 1
 ```
 
+The optimal number of shards depends on several factors, including the costs and infrastructure of your underlying CI services. Benchmarking different shard sizes will help you determine the ideal configuration for your specific needs.
+
 ### Readability
 
-Dart/Flutter tests use the reporter parameter to "prettify" the outputs, I've found the "github" reporter to be neat and
-concise as opposed to the default reporter.
+Flutter tests use the `reporter` parameter to "prettify" the outputs. I've found the "github" reporter to be neat and
+concise as opposed to the default reporter. Let's take a look at the default reporter output:
 
 ```shell
 #Default Reporter
@@ -123,7 +124,7 @@ concise as opposed to the default reporter.
 
 ```
 
-If you run the tests with the github reporter i.e.
+Using the `github` reporter on the other hand we get the below output:
 
 ```shell
 flutter test --reporter=github
@@ -137,6 +138,4 @@ flutter test --reporter=github
 
 ### Conclusion
 
-You can leverage the concurrency parameter to increase the speed of your dart tests. Additionally, you can shave off
-some
-more time by using test sharding on multiple machines.
+In this article, we explored two key techniques to optimize your Flutter test execution time: concurrency and sharding. By leveraging these approaches, you can significantly reduce test execution time, leading to a faster development workflow and quicker feedback loops.
