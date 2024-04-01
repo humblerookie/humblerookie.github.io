@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anvith Bhat | My Blog]]></title><description><![CDATA[Anvith Bhat | My Blog]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 29 Mar 2024 19:18:51 GMT</lastBuildDate><item><title><![CDATA[Optimizing Performance of your Flutter tests]]></title><description><![CDATA[We look how to speedup our tests in flutter and leveraging some options to improve readability on our CI.]]></description><link>https://anvith.dev/posts/optimizing-flutter-tests/</link><guid isPermaLink="false">https://anvith.dev/posts/optimizing-flutter-tests/</guid><pubDate>Fri, 29 Mar 2024 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anvith Bhat | My Blog]]></title><description><![CDATA[Anvith Bhat | My Blog]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 01 Apr 2024 09:01:20 GMT</lastBuildDate><item><title><![CDATA[Optimizing Performance of your Flutter tests]]></title><description><![CDATA[We look how to speedup our tests in flutter and leveraging some options to improve readability on our CI.]]></description><link>https://anvith.dev/posts/optimizing-flutter-tests/</link><guid isPermaLink="false">https://anvith.dev/posts/optimizing-flutter-tests/</guid><pubDate>Fri, 29 Mar 2024 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
     &gt;
@@ -63,8 +63,7 @@ test suites that run in parallel.&lt;/p&gt;
           &lt;span class=&quot;token number&quot;&gt;1551482880&lt;/span&gt;  maximum resident &lt;span class=&quot;token builtin class-name&quot;&gt;set&lt;/span&gt; size
            &lt;span class=&quot;token number&quot;&gt;226740352&lt;/span&gt;  peak memory footprint&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;ⓘ Note: We’ve used the full qualifier &lt;strong&gt;“/usr/bin/time”&lt;/strong&gt; instead of &lt;strong&gt;“time”&lt;/strong&gt; since it allows us to pass the more
-arguments.&lt;/p&gt;
+&lt;p&gt;ⓘ Note: We’ve used the full qualifier &lt;strong&gt;“/usr/bin/time”&lt;/strong&gt; instead of &lt;strong&gt;“time”&lt;/strong&gt; since it allows us to pass more arguments.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Next, let’s try with leveraging the maximum cores that our machine allows i.e. &lt;strong&gt;10&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;/usr/bin/time &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--reporter&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;github &lt;span class=&quot;token parameter variable&quot;&gt;--concurrency&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
@@ -93,11 +92,11 @@ cores on the worker instance and pipe it into the flutter test command as follow
 &lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
 
 flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--concurrency&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$number_of_cores&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;There is yet another trick to speed up tests i.e. sharding. Let’s see how we can leverage it.&lt;/p&gt;
+&lt;p&gt;There is yet another trick to speed up tests i.e. sharding. Let’s see how we can leverage it the next section.&lt;/p&gt;
 &lt;h2 id=&quot;sharding&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sharding&quot; aria-label=&quot;sharding permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sharding&lt;/h2&gt;
 &lt;p&gt;If your CI doesn’t cap the number of parallel jobs you can run or alternately if speed is your primary concern, you
-could benefit from test sharding (splitting your tests into multiple independent chunks).&lt;/p&gt;
-&lt;p&gt;Sharding consists of supplying two parameters&lt;/p&gt;
+could benefit from test sharding (splitting your tests into multiple  chunks that can be run independently on different machines).&lt;/p&gt;
+&lt;p&gt;Sharding consists of supplying two parameters:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Total Shards&lt;/strong&gt; : This indicates the number of subsets you wish to break the tests into.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Shard Index&lt;/strong&gt;: This indicates the index of the subset of tests you’re running.&lt;/li&gt;
@@ -108,9 +107,10 @@ flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
 
 &lt;span class=&quot;token comment&quot;&gt;#Machine 2&lt;/span&gt;
 flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; --total-shards &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; --shard-index &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The optimal number of shards depends on several factors, including the costs and infrastructure of your underlying CI services. Benchmarking different shard sizes will help you determine the ideal configuration for your specific needs.&lt;/p&gt;
 &lt;h3 id=&quot;readability&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#readability&quot; aria-label=&quot;readability permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Readability&lt;/h3&gt;
-&lt;p&gt;Dart/Flutter tests use the reporter parameter to “prettify” the outputs, I’ve found the “github” reporter to be neat and
-concise as opposed to the default reporter.&lt;/p&gt;
+&lt;p&gt;Flutter tests use the &lt;code class=&quot;language-text&quot;&gt;reporter&lt;/code&gt; parameter to “prettify” the outputs. I’ve found the “github” reporter to be neat and
+concise as opposed to the default reporter. Let’s take a look at the default reporter output:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#Default Reporter&lt;/span&gt;
 
 00:08 +198: pokemon-flutter/test/blocs/pokemon_overview_bloc_test.dart: verify the initial state when user has caught a pokemon
@@ -121,7 +121,7 @@ concise as opposed to the default reporter.&lt;/p&gt;
 00:09 +252: pokemon-flutter/test/blocs/pokemon_overview_bloc_test.dart: verify when user switches tab to view details after catching a pokemon we navigate to it
 &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;🌎 Easy Localization&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;WARNING&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Localization key &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;stories&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; not found
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If you run the tests with the github reporter i.e.&lt;/p&gt;
+&lt;p&gt;Using the &lt;code class=&quot;language-text&quot;&gt;github&lt;/code&gt; reporter on the other hand we get the below output:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;flutter &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--reporter&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;github
 &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
 &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
@@ -130,9 +130,7 @@ concise as opposed to the default reporter.&lt;/p&gt;
 ✅ pokemon-flutter/test/blocs/pokemon_overview_bloc_test.dart: verify the initial state when user has caught a pokemon
 ✅ pokemon-flutter/test/blocs/pokemon_overview_bloc_test.dart: verify when user switches tab to view details after catching a pokemon we navigate to it&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;You can leverage the concurrency parameter to increase the speed of your dart tests. Additionally, you can shave off
-some
-more time by using test sharding on multiple machines.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Exploring Recent Kotlin APIs]]></title><description><![CDATA[We take a look at some of the more prominent api changes in Kotlin 1.3.7x and 1.4.x preview releases.]]></description><link>https://anvith.dev/posts/exploring-recent-kotlin-apis/</link><guid isPermaLink="false">https://anvith.dev/posts/exploring-recent-kotlin-apis/</guid><pubDate>Sat, 18 Jul 2020 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+&lt;p&gt;In this article, we explored two key techniques to optimize your Flutter test execution time: concurrency and sharding. By leveraging these approaches, you can significantly reduce test execution time, leading to a faster development workflow and quicker feedback loops.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Exploring Recent Kotlin APIs]]></title><description><![CDATA[We take a look at some of the more prominent api changes in Kotlin 1.3.7x and 1.4.x preview releases.]]></description><link>https://anvith.dev/posts/exploring-recent-kotlin-apis/</link><guid isPermaLink="false">https://anvith.dev/posts/exploring-recent-kotlin-apis/</guid><pubDate>Sat, 18 Jul 2020 16:51:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
     &gt;
