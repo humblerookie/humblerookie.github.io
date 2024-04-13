@@ -42,7 +42,13 @@ jobs:
           key: npm-modules-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
             npm-modules-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
             npm-modules-${{ runner.os }}-
-
+      - name: Set Git Credentials
+        uses: de-vri-es/setup-git-credentials@v2
+        with:
+          credentials: ${{secrets.GIT_CREDENTIALS}}
+      - name: Set Git Config
+        run:
+            git config --global user.email "1428864+humblerookie@users.noreply.github.com" && git config --global user.name "humblerookie"  
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
