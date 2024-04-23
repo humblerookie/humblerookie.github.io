@@ -1,5 +1,5 @@
 ---
-title: Optimizing Performance of your Flutter tests
+title: "Optimizing Flutter - Part 1: Test Performance"
 date: "2024-03-29T16:51:00.000Z"
 template: "post"
 draft: false
@@ -13,7 +13,7 @@ description: "We look how to speedup our tests in flutter and leveraging some op
 socialImage: "./banner.jpg"
 ---
 
-![Banner graphic Kotlin](banner.jpg)
+![Banner graphic Flutter test optimization](banner.jpg)
 
 Recently, while looking around avenues for optimisation on our CI pipeline, I explored the tests library and ran into
 the "concurrency" parameter.
