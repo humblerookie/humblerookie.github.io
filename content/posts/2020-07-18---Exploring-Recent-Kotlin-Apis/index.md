@@ -38,7 +38,7 @@ fun oldInstantiation() {
          require(value.length > 4)
          ParsedOutput(value.substring(0, 3), value.substring(3, value.length))
       }
-   } 
+   }
 }
 
 fun newInstantiation() {
@@ -50,7 +50,6 @@ fun newInstantiation() {
 ```
 
 So instead of using the `oldInstantation` which has a lot of boilerplate, we now have neat little lambda for our anonymous `Parser` instance as shown in `newInstantiation`.
-
 
 ##Delegate to another property
 
@@ -84,7 +83,7 @@ class Vehicle(val type: VehicleType = CYCLE) {
 
     @Deprecated("Use constructor with 'type' info instead")
     constructor (isCar: Boolean) : this(if (isCar) CAR else CYCLE)
-    
+
     enum class VehicleType {
         CYCLE, CAR, TRUCK, SHIP
     }
@@ -128,13 +127,13 @@ class Vehicle(var type: VehicleType = CYCLE) {
 }
 ```
 
-
 ## Standard library additions
 
-- `scan` : This operator was added to the collections framework. Its essentially the equivalent of using `fold` with a `map` operation. `scan` returns a transformed version of the current collection where the transforming lambda has access to the *accumulated* value in order to compute the new value. Here's an illustration from the official documentation.
-![Scan diagram](https://blog.jetbrains.com/wp-content/uploads/2020/02/kotlin-scanFold.gif)
+- `scan` : This operator was added to the collections framework. Its essentially the equivalent of using `fold` with a `map` operation. `scan` returns a transformed version of the current collection where the transforming lambda has access to the _accumulated_ value in order to compute the new value. Here's an illustration from the official documentation.
+  ![Scan diagram](https://blog.jetbrains.com/wp-content/uploads/2020/02/kotlin-scanFold.gif)
 
-- **Builders**: `buildList`, `buildMap` are efficient ways to build read only lists and maps respectively for cases where the members aren't straightforward or need to be computed from multiple sources. Here's how you'd use it 
+- **Builders**: `buildList`, `buildMap` are efficient ways to build read only lists and maps respectively for cases where the members aren't straightforward or need to be computed from multiple sources. Here's how you'd use it
+
 ```kotlin
  val allowedDisplayCodes = buildList<Int> {
         addAll(currentDisplayCodes)
