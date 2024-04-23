@@ -44,7 +44,6 @@ In order to check the difference let's see how the default test execution fares 
 
 > ⓘ Note: We've used the full qualifier **"/usr/bin/time"** instead of **"time"** since it allows us to pass more arguments.
 
-
 Next, let's try with leveraging the maximum cores that our machine allows i.e. **10**.
 
 ```shell
@@ -87,7 +86,7 @@ There is yet another trick to speed up tests i.e. sharding. Let's see how we can
 ## Sharding
 
 If your CI doesn't cap the number of parallel jobs you can run or alternately if speed is your primary concern, you
-could benefit from test sharding (splitting your tests into multiple  chunks that can be run independently on different machines).
+could benefit from test sharding (splitting your tests into multiple chunks that can be run independently on different machines).
 
 Sharding consists of supplying two parameters:
 

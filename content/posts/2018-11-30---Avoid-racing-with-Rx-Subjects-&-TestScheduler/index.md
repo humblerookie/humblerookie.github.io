@@ -12,7 +12,6 @@ description: "We all use Rxjava in android and write tests, this article highlig
 socialImage: "./banner.png"
 ---
 
-
 ![Banner graphic RXjava and Android](./banner.png)
 
 RX is a great spell but at times certain things can make you wish you had more hair on your head if you miss out on some fundamentals. Here’s one of my ‘GOTCHA’ moments.
@@ -78,11 +77,9 @@ and...
 
 ![Questionable output](https://miro.medium.com/max/4784/1*lY_TJBqq7LDISWyrkCQUCQ.png)
 
-
 So what’s really happening here?
 
 ![Everybody lies](https://miro.medium.com/max/1000/1*ZcpcCH-0QNJJOKCw0fz_sg.gif)
-
 
 Turns out the actual subscription(_subscribeActual()_ method in _PublishSubject_) which adds the subscriber to Subject’s list of subscribers doesn’t happen until _triggerActions_ is invoked on the **TestScheduler**. This results in a race condition where even though the subscriber seems subscribed, the actual subscription and emission happen concurrently. The emission is therefore ignored due to absence of any subscribers.
 
@@ -107,7 +104,6 @@ class DemoViewModelTest {
     }
 }
 ```
-
 
 #Conclusion
 
